@@ -1,0 +1,16 @@
+version: '3.8' # Docker Compose file version
+
+services:
+  dev-db: # Name of the service (Postgres database container)
+    image: postgres:13 # Uses the official Postgres version 13 image
+    ports:
+      - 5434:5432 # Maps local port 5434 to container port 5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - freecodecamp # This service connects to the "freecodecamp" network
+
+networks:
+  freecodecamp: # Defines the custom network
