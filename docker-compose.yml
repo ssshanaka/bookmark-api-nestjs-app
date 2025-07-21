@@ -4,7 +4,7 @@ services:
   dev-db: # Name of the service (Postgres database container)
     image: postgres:13 # Uses the official Postgres version 13 image
     ports:
-      - 5434:5432 # Maps local port 5434 to container port 5432
+      - '6000:5432' # Maps local port 5434 to container port 5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
